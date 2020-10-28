@@ -38527,7 +38527,7 @@ let test = [
   }
 ];
 
-// test save of multiple documents to collection
+// saving all nasdaq stocks to collection. now have access to find them and do basic stuff on it
 
 Stocks.collection.insertMany(test, function(err,docs){
   if (err) {
