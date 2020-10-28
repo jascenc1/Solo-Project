@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Stock from './Stock';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        im dope af
+      <div className="App">
+       <Stock /> 
       </div>
     );
   }
