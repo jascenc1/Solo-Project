@@ -42,4 +42,9 @@ stocksDBController.addStock = (req, res, next) => {
   // return next() and then in the db router just do
 };
 
+
+// controller to delte if time
+
+//controller to update if time 
+
 module.exports = stocksDBController;

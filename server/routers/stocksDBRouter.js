@@ -10,15 +10,28 @@ router.get('/:ticker', stocksDBController.getStock, (req, res) => {
 });
 
 
-// **** might be a strech feature, but creating your own stock to add to db? 
+// able to post to DB, need to add user input forms for this 
 
 router.post('/addDB', stocksDBController.addStock, (req, res) => {
   // need to add middleware func in controller to get that info from request body and create the stock person wants
   // it would be something like 
 
   //  res.status(200).json({})
-   res.status(200).send('SUCCESS')  // <--- change to more PG message 
+   res.status(200).send('SUCCESS');
   // .catch(err => res.status(400).json('error' + err))
+});
+
+
+// router . update? find stock price only?  can do many things but for now have that
+// router to delete stuff? 
+
+router.delete('/:ticker', (req, res) => {
+ // @ time 38:41 on https://www.youtube.com/watch?v=7CqJlxBYj-M&t=2914s
+});
+
+
+router.post('/update/:ticker', (req, res) => {
+
 });
 
 module.exports = router; 
