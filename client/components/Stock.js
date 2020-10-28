@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Plot from 'react-plotly.js';
 
 export default class Stock extends Component {
   // store states
@@ -25,7 +26,7 @@ export default class Stock extends Component {
     fetch(API_Call) // can probably use axios for this 
       .then(res => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
         for (let key in data['Time Series (Daily)']) { //for every date fun this func
           stockChartXValuesFunction.push(key);
@@ -46,6 +47,18 @@ export default class Stock extends Component {
     return (
       <div>
         <h1>Stock Market</h1>
+        <Plot
+        data={[
+          {
+            x: this.state.stockChartXValues,
+            y: this.state.stockChartYValues,
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {color: 'red'},
+          },
+        ]}
+        layout={ {width: 620, height: 440, title: `AMZN Price over past 100 days`} }
+      />
       </div>
     )
   }
