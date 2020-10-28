@@ -4,17 +4,21 @@
   "description": "Showing stocks for newbies",
   "main": "./client/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node server/server.js",
+    "start": "cross-env NODE_ENV=development nodemon server/server.js",
     "build": "cross-env NODE_ENV=production webpack --hot",
     "dev": "cross-env NODE_ENV=development concurrently \"nodemon server/server.js\" \"webpack serve --hot\""
   },
   "author": "Jon Ascencio",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.0",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
+    "mongoose": "^5.10.11",
     "morgan": "^1.10.0",
     "node-sass": "^4.14.1",
     "passport": "^0.4.1",
