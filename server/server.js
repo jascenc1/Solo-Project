@@ -2,8 +2,10 @@ const express = require('express');
 const dotenv = require('dotenv'); // has our config/variables
 const path = require('path');
 const axios = require('axios');
+const bodyParser = require('body-parser');
 const cors = require('cors'); // to get cross origin working 
 const mDB = require('./models/stocksModels');
+const stocksDBRouter = require('./routers/stocksDBRouter');
 
 
 
@@ -17,7 +19,10 @@ mDB.connectDB();
 
 const app = express(); // initialzie app with express 
 
+app.use(express.json()); // needed to be first to work. need to find out why?
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 
 
@@ -31,6 +36,18 @@ app.use('/build', express.static(path.resolve(__dirname, '../build')));
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../index.html'));
 });
+
+
+
+// set up router for my stocksDB 
+app.use('/stocks', stocksDBRouter); 
+
+
+
+
+
+
+
 
 
 // whenever we use process.env we can use variables in that config. if not there then we use port 5000
