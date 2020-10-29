@@ -30,7 +30,9 @@ a {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 3rem;
+  text-align: center;
+  color: black;
 }
 
 h2 {
@@ -39,6 +41,7 @@ h2 {
 
 h3 {
   font-size: 1.8rem;
+  color: black;
 }
 
 a,
@@ -75,7 +78,7 @@ button {
 body {
   padding-left: 1rem;
   padding-right: 1rem;
-  background: rgba(99, 95, 95, 0.915);
+  background: rgba(190, 189, 189, 0.915);
   color: #e4e4e4;
 }
 
@@ -110,6 +113,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.stockDetail_container {
+  box-shadow: 1px 1px 5px rgba(22, 22, 22, 0.915);
+  background: rgb(173, 165, 165) !important;
+  color: black;
 }
 
 /* button options */
@@ -244,13 +253,19 @@ body {
 }
 
 .stockHeadContainer h3 {
+  text-emphasis: center;
   margin: 0;
+  padding: 1rem;
 }
 
 .stockHeadContainer .favIcon {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.stockDetailsList {
+  padding: 1rem;
 }
 
 /* character card photo */
@@ -287,6 +302,20 @@ body {
   width: 100%;
 }
 
+.form-group {
+  padding-bottom: 10px; 
+  color: black;
+}
+
+input {
+  padding: 0.25rem;
+  border-radius: 2px;
+}
+
+.form-group-btn {
+  padding-bottom: 35px;
+}
+
 /* modal */
 .modal {
   position: absolute;
@@ -297,6 +326,10 @@ body {
   border: 1px solid lightgray;
   border-radius: 5%;
   box-shadow: 1px 1px 5px rgba(22, 22, 22, 0.915);
+}
+
+.icon {
+  padding-left: 0.4rem;
 }
 
 .modalName {

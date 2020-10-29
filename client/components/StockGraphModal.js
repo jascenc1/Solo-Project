@@ -59,7 +59,7 @@ export default class StockGraphModal extends Component {
             y: this.state.stockChartYValues,
             type: 'scatter',
             mode: 'lines+markers',
-            marker: {color: 'red'},
+            marker: {color: 'blue'},
           },
         ]}
         layout={ {width: 620, height: 440, title: `${this.props.stockTicker.symbol} Price over past 100 days`} }

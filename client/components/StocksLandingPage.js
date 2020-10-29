@@ -93,7 +93,7 @@ export default class StocksLandingPage extends Component {
               onChange={this.onChangeTicker}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group-btn">
             <input type="submit" value="Look up Stock" />
           </div>
           <React.Fragment>

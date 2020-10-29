@@ -15,7 +15,7 @@ const StockDetails = ({ info, openModal }) => {
 
 
   return (
-    <article className="stock stockDetail">
+    <article className="stockDetail_container">
       <div className="stockHeadContainer">
           <h3 className="stockName">{name}</h3>
       </div>
