@@ -78,8 +78,9 @@ button {
 body {
   padding-left: 1rem;
   padding-right: 1rem;
-  background: rgb(79,140,182);
-  background: linear-gradient(90deg, rgba(79,140,182,1) 0%, rgba(135,170,116,1) 38%, rgba(252,69,69,0.9948354341736695) 100%);
+  background: rgb(245, 195, 203);
+  /* background: rgb(79,140,182); */
+  /* background: linear-gradient(90deg, rgba(79,140,182,1) 0%, rgba(135,170,116,1) 38%, rgba(252,69,69,0.9948354341736695) 100%); */
   color: #e4e4e4;
 }
 
@@ -122,6 +123,15 @@ body {
   background: rgb(245, 241, 241) !important;
   color: black;
   margin-bottom: 30px;
+  width: 350px; 
+  height: 280px;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
 }
 
 /* button options */
