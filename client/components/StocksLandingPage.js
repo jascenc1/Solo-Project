@@ -89,6 +89,8 @@ export default class StocksLandingPage extends Component {
             <input type="submit" value="Look up Stock" />
           </div>
           <React.Fragment>
+            <section className="mainSection">
+              <div className="stockContainer">
           {
             this.state.stocks.map((stock) => {
               return (
@@ -100,10 +102,10 @@ export default class StocksLandingPage extends Component {
               );
             })
           }
+          </div>
+          </section>
           </React.Fragment>
         </form>
-        <section className="mainSection">
-      </section>
       </div>
     );
 

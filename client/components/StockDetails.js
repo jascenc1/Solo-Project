@@ -21,12 +21,12 @@ const StockDetails = ({ info, openModal }) => {
       </div>
       <ul className="stockDetailsList">
         <li className="stockDetail">Ticker: {symbol}<span className="icon"><FAIcon icon={faQuestionCircle} size="xs" style={{color: 'steelBlue'}} onClick={e => openDetailsModal(e, 'species', species_id)} /></span></li> 
-        <li className="stockDetail">lastSale: {lastSale}</li>
-        <li className="stockDetail">marketCap: {marketCap}</li>
-        <li className="stockDetail">ipoYear: {ipoYear}</li>
-        <li className="stockDetail">sector: {sector}</li>
+        <li className="stockDetail">Closing Price: {lastSale}</li>
+        <li className="stockDetail">Market Cap: {marketCap}</li>
+        <li className="stockDetail">IPO Year: {ipoYear}</li>
+        <li className="stockDetail">Sector: {sector}</li>
         <li className="stockDetail">Industry: {industry}</li>
-        <li className="stockDetail">summary Quote: <a href={summaryQuote}>{summaryQuote}</a></li>
+        <li className="stockDetail">Summary Quote: <a href={summaryQuote}>{summaryQuote}</a></li>
       </ul>
     </article>
   );

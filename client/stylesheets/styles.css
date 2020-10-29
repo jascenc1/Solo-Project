@@ -75,7 +75,7 @@ button {
 body {
   padding-left: 1rem;
   padding-right: 1rem;
-  background: rgba(22, 22, 22, 0.915);
+  background: rgba(99, 95, 95, 0.915);
   color: #e4e4e4;
 }
 
@@ -106,7 +106,7 @@ body {
   box-shadow: 1px 1px 5px rgba(22, 22, 22, 0.915);
 }
 
-.pageHeader {
+.stockContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -233,21 +233,21 @@ body {
 }
 
 /* character card header */
-.charHeadContainer {
+.stockHeadContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.charHeadContainer div {
+.stockHeadContainer div {
   width: 100%;
 }
 
-.charHeadContainer h3 {
+.stockHeadContainer h3 {
   margin: 0;
 }
 
-.charHeadContainer .favIcon {
+.stockHeadContainer .favIcon {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
