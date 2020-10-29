@@ -46,7 +46,6 @@ export default class Stock extends Component {
   render() {
     return (
       <div>
-        <h1>Stock Market</h1>
         <Plot
         data={[
           {

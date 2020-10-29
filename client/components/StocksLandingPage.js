@@ -16,10 +16,6 @@ export default class StocksLandingPage extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   };
 
-  // componentDidMount() {
-
-  // }
-
   onChangeTicker(e) {
     this.setState({
       ticker: e.target.value
@@ -30,17 +26,22 @@ export default class StocksLandingPage extends Component {
     e.preventDefault();
 
     const ticker = this.state.ticker;
-    console.log(typeof ticker);
+    // console.log(typeof ticker);
     axios.get(`http://localhost:3000/stocks/${ticker}`)
       .then((res) => {
-        console.log(res.data[0]);
-        // console.log(res.data);
+        console.log('hello');
+        console.log(res);
+        if (res.data.length !== 0) {
         this.setState({
           stocks: [...this.state.stocks, res.data[0]]
-        });
-        console.log('this is the stocks' + this.state.stocks);
-  
+        });  
+      } else {
+        alert('Wrong market buddy')
+      }
       })
+      .catch(err => {
+        alert('That stock dont exist')
+      }) 
 
     this.setState({
       ticker: '',
