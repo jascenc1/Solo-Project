@@ -73,7 +73,7 @@ export default class StocksLandingPage extends Component {
 
 
   render() {
-    if (!this.state.fetchedStocks) return (
+    return (
       <div>
         <h3>Please Input Stocks</h3>
         <form onSubmit={this.onSubmit}>
@@ -110,30 +110,5 @@ export default class StocksLandingPage extends Component {
       </div>
     );
 
-    const { stocks } = this.state;
-    if (!stocks) return null;
-
-    if(!stocks.length) return (
-      <div>Sorry, no stocks found</div>
-    );
-
-    const stockElems = stocks.map((stock) => {
-      return (
-        <StockDetails
-          key={stock._id}
-          info={stock}
-          openModal={this.openModal}
-        />
-      );
-    })
-
-    
-    return (
-      <section className="mainSection">
-        <div className="stockContainer">
-          {stockElems}
-        </div>
-      </section>
-    )
   }
 }
