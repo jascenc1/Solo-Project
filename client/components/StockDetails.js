@@ -4,7 +4,7 @@ import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
 const StockDetails = ({ info, openModal }) => {
   
-  const { symbol, name, lastSale, marketCap, ipoYear, sector, industry, summaryQuote } = info;
+  const { _id, symbol, name, lastSale, marketCap, ipoYear, sector, industry, summaryQuote } = info;
 
 
   const openDetailsModal = (e, stockTicker) => {

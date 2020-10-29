@@ -23,7 +23,6 @@ export default class StocksLandingPage extends Component {
     this.onChangeTicker = this.onChangeTicker.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
-    // this.onClick = this.onClick.bind(this);
   };
 
   openModal(stockTicker, position) {
@@ -78,6 +77,8 @@ export default class StocksLandingPage extends Component {
   };
 
 
+
+
   render() {
     return (
       <div>
@@ -105,7 +106,6 @@ export default class StocksLandingPage extends Component {
                   key={stock._id}
                   info={stock}
                   openModal={this.openModal}
-                  onClick={this.onClick}
                 />
               );
             })
