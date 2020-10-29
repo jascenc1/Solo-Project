@@ -7,10 +7,10 @@ const StockDetails = ({ info, openModal }) => {
   const { symbol, name, lastSale, marketCap, ipoYear, sector, industry, summaryQuote } = info;
 
 
-  const openDetailsModal = (e, type, id) => {
+  const openDetailsModal = (e, stockTicker) => {
     const top = e.pageY;
     const left = e.pageX;
-    openModal(type, { top, left }, id);
+    openModal(stockTicker, { top, left });
   }
 
 
@@ -20,7 +20,7 @@ const StockDetails = ({ info, openModal }) => {
           <h3 className="stockName">{name}</h3>
       </div>
       <ul className="stockDetailsList">
-        <li className="stockDetail">Ticker: {symbol}<span className="icon"><FAIcon icon={faQuestionCircle} size="xs" style={{color: 'steelBlue'}} onClick={e => console.log(`this ticker: ${symbol} was click`)} /></span></li> 
+        <li className="stockDetail">Ticker: {symbol}<span className="icon"><FAIcon icon={faQuestionCircle} size="xs" style={{color: 'steelBlue'}} onClick={e => openDetailsModal(e,{symbol})} /></span></li> 
         <li className="stockDetail">Closing Price: {lastSale}</li>
         <li className="stockDetail">Market Cap: {marketCap}</li>
         <li className="stockDetail">IPO Year: {ipoYear}</li>

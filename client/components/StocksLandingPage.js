@@ -2,18 +2,46 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 import StockDetails from './StockDetails';
+import StockGraphModal from './StockGraphModal';
 
 export default class StocksLandingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fetchedStocks: false,
       stocks: [],
-      ticker: ''
-    }
+      ticker: '', 
+      modalState: {
+        open: false,
+        stockTicker: null,
+        position: {top: 0, left: 0},
+      }
+    };
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
 
     this.onChangeTicker = this.onChangeTicker.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  };
+
+  openModal(stockTicker, position) {
+    this.setState({
+      modalState: {
+        ...this.state.modalState, 
+        open: true,
+        stockTicker,
+        position
+      }
+    })
+  };
+
+  closeModal() {
+    this.setState({
+      modalState: {
+        ...this.state.modalState, 
+        open: false
+      }
+    });
   };
 
   onChangeTicker(e) {
@@ -50,27 +78,6 @@ export default class StocksLandingPage extends Component {
   };
 
 
-  // openModal(type, position, id) {
-  //   this.setState({
-  //     modalState: {
-  //       ...this.state.modalState,
-  //       open: true,
-  //       type,
-  //       position,
-  //       id
-  //     }
-  //   })
-  // }
-
-  // closeModal() {
-  //   this.setState({
-  //     modalState: {
-  //       ...this.state.modalState,
-  //       open: false
-  //     }
-  //   })
-  // }
-
 
   render() {
     return (
@@ -102,9 +109,22 @@ export default class StocksLandingPage extends Component {
                 />
               );
             })
+
           }
           </div>
           </section>
+          </React.Fragment>
+          <React.Fragment>
+          <section className="mainSection">
+            {
+              this.state.modalState.open &&
+              <StockGraphModal
+                stockTicker={this.state.modalState.stockTicker}
+                position={this.state.modalState.position}
+                closeModal={this.closeModal}
+              />
+            }
+            </section>
           </React.Fragment>
         </form>
       </div>
