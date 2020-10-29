@@ -28,6 +28,7 @@ const StockDetails = ({ info, openModal }) => {
         <li className="stockDetail">Industry: {industry}</li>
         <li className="stockDetail">Summary Quote: <a href={summaryQuote}>{summaryQuote}</a></li>
       </ul>
+      <button>Remove Stock</button>
     </article>
   );
 }

@@ -22,6 +22,8 @@ export default class StocksLandingPage extends Component {
 
     this.onChangeTicker = this.onChangeTicker.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
+    // this.onClick = this.onClick.bind(this);
   };
 
   openModal(stockTicker, position) {
@@ -57,14 +59,12 @@ export default class StocksLandingPage extends Component {
     // console.log(typeof ticker);
     axios.get(`http://localhost:3000/stocks/${ticker}`)
       .then((res) => {
-        console.log('hello');
-        console.log(res);
         if (res.data.length !== 0) {
         this.setState({
           stocks: [...this.state.stocks, res.data[0]]
         });  
       } else {
-        alert('Wrong market buddy')
+        alert('Stock is not in this database')
       }
       })
       .catch(err => {
@@ -76,6 +76,10 @@ export default class StocksLandingPage extends Component {
     });
 
   };
+
+  // onClick(e) {
+  //   console.log(this.state.stock[0]._id);
+  // }
 
 
 
@@ -106,6 +110,7 @@ export default class StocksLandingPage extends Component {
                   key={stock._id}
                   info={stock}
                   openModal={this.openModal}
+                  onClick={this.onClick}
                 />
               );
             })

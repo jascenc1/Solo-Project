@@ -78,7 +78,8 @@ button {
 body {
   padding-left: 1rem;
   padding-right: 1rem;
-  background: rgba(190, 189, 189, 0.915);
+  background: rgb(79,140,182);
+  background: linear-gradient(90deg, rgba(79,140,182,1) 0%, rgba(135,170,116,1) 38%, rgba(252,69,69,0.9948354341736695) 100%);
   color: #e4e4e4;
 }
 
@@ -117,7 +118,7 @@ body {
 
 .stockDetail_container {
   box-shadow: 1px 1px 5px rgba(22, 22, 22, 0.915);
-  background: rgb(173, 165, 165) !important;
+  background: rgb(231, 229, 229) !important;
   color: black;
 }
 
