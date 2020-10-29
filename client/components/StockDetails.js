@@ -8,9 +8,11 @@ const StockDetails = ({ info, openModal }) => {
 
 
   const openDetailsModal = (e, stockTicker) => {
-    const top = e.pageY;
-    const left = e.pageX;
-    openModal(stockTicker, { top, left });
+    // const top = e.pageY;
+    // const left = e.pageX;
+    // openModal(stockTicker, { top, left });
+    openModal(stockTicker);
+
   }
 
 

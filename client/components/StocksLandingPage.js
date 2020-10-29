@@ -13,7 +13,7 @@ export default class StocksLandingPage extends Component {
       modalState: {
         open: false,
         stockTicker: null,
-        position: {top: 0, left: 0},
+        // position: {top: 0, left: 0},
       }
     };
 
@@ -32,7 +32,7 @@ export default class StocksLandingPage extends Component {
         ...this.state.modalState, 
         open: true,
         stockTicker,
-        position
+        // position
       }
     })
   };
@@ -77,11 +77,6 @@ export default class StocksLandingPage extends Component {
 
   };
 
-  // onClick(e) {
-  //   console.log(this.state.stock[0]._id);
-  // }
-
-
 
   render() {
     return (
@@ -125,7 +120,7 @@ export default class StocksLandingPage extends Component {
               this.state.modalState.open &&
               <StockGraphModal
                 stockTicker={this.state.modalState.stockTicker}
-                position={this.state.modalState.position}
+                // position={this.state.modalState.position}
                 closeModal={this.closeModal}
               />
             }

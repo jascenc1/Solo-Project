@@ -113,13 +113,15 @@ body {
 .stockContainer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 .stockDetail_container {
   box-shadow: 1px 1px 5px rgba(22, 22, 22, 0.915);
-  background: rgb(231, 229, 229) !important;
+  background: rgb(245, 241, 241) !important;
   color: black;
+  margin-bottom: 30px;
 }
 
 /* button options */
@@ -320,7 +322,10 @@ input {
 /* modal */
 .modal {
   position: absolute;
-  display: inline-block;
+  /* display: inline-block; */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
   padding: 0.8rem;
   color: black;
   background: #f3f3f3;
