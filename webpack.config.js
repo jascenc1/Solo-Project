@@ -34,6 +34,11 @@ module.exports = {
       //     'sass-loader'
       //   ] // this array is done in reverse order . can also use style!css!sass. ie is read from right to left 
       // },
+      {
+        test: /.(css|scss)$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
+      }
     ]
   }, 
   devServer: { // allows you to create a bundled file in memory(in ram) and this is served to express which allows us to see development locally 
