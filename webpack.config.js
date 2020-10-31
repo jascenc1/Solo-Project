@@ -14,6 +14,7 @@ module.exports = {
       {
       test: /\.jsx?/, // we can tell which file we are choosing via tests
       // exclude: /(node_modules)/, // we exclude going through node modules because we should already assume that they should be in a format that is workable and thus don't need transpiling 
+      exclude: /node_modules/,
       use: { // referred to as a rule result and is used when a rule condition matches. ie we are going to "use" a loader 
         loader: 'babel-loader', 
         options: { // then we specify options for each line of file

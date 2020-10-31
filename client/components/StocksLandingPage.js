@@ -76,9 +76,6 @@ export default class StocksLandingPage extends Component {
 
   };
 
-
-
-
   render() {
     return (
       <div>
@@ -86,11 +83,11 @@ export default class StocksLandingPage extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Input Stock Ticker: </label>
-            <input type="text" 
-              required 
-              className="form-control" 
-              value={this.state.ticker}
-              onChange={this.onChangeTicker}
+            <input type="text"
+            required
+            className="form-control"
+            value={this.state.ticker}
+            onChange={this.onChangeTicker}
             />
           </div>
           <div className="form-group-btn">
@@ -99,36 +96,33 @@ export default class StocksLandingPage extends Component {
           <React.Fragment>
             <section className="mainSection">
               <div className="stockContainer">
-          {
-            this.state.stocks.map((stock) => {
-              return (
-                <StockDetails
-                  key={stock._id}
-                  info={stock}
-                  openModal={this.openModal}
-                />
-              );
-            })
-
-          }
-          </div>
-          </section>
+                {
+                  this.state.stocks.map((stock,i) => {
+                    return (
+                      <StockDetails
+                      key={i}
+                      info={stock}
+                      openModal={this.openModal}
+                      />
+                    )
+                  })
+                }
+              </div>
+            </section>
           </React.Fragment>
           <React.Fragment>
-          <section className="mainSection">
-            {
-              this.state.modalState.open &&
-              <StockGraphModal
+            <section className="mainSection">
+              {
+                this.state.modalState.open &&
+                <StockGraphModal
                 stockTicker={this.state.modalState.stockTicker}
-                // position={this.state.modalState.position}
                 closeModal={this.closeModal}
-              />
-            }
+                />
+              }
             </section>
           </React.Fragment>
         </form>
       </div>
-    );
-
+    )
   }
 }

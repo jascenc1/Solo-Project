@@ -25,8 +25,10 @@ router.post('/addDB', stocksDBController.addStock, (req, res) => {
 // router . update? find stock price only?  can do many things but for now have that
 // router to delete stuff? 
 
-router.delete('/:ticker', (req, res) => {
+router.delete('/:id', (req, res) => {
  // @ time 38:41 on https://www.youtube.com/watch?v=7CqJlxBYj-M&t=2914s
+
+  res.status(200).send('success');  
 });
 
 

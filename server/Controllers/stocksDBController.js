@@ -45,6 +45,15 @@ stocksDBController.addStock = (req, res, next) => {
 
 // controller to delte if time
 
+stocksDBController.deleteStock = (req, res, next) => {
+  models.Stocks.findByIdAndDelete(req.params.id)
+    .then((response) => {
+      console.log(response);
+      return next();
+    })
+    .catch(err => console.log(err));
+}
+
 //controller to update if time 
 
 module.exports = stocksDBController;

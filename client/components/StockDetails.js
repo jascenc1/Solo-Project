@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import axios from 'axios';
 
 const StockDetails = ({ info, openModal }) => {
   
@@ -12,7 +13,6 @@ const StockDetails = ({ info, openModal }) => {
     // const left = e.pageX;
     // openModal(stockTicker, { top, left });
     openModal(stockTicker);
-
   }
 
 
@@ -30,7 +30,6 @@ const StockDetails = ({ info, openModal }) => {
         <li className="stockDetail">Industry: {industry}</li>
         <li className="stockDetail">Summary Quote: <a href={summaryQuote}>{summaryQuote}</a></li>
       </ul>
-      <button>Remove Stock</button>
     </article>
   );
 }
