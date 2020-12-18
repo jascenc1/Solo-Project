@@ -1,7 +1,7 @@
 const models = require('../models/stocksModels'); // gives access to stocksModels exported object with stocks db 
 // ie models.Stocks
 
-const stocksDBController = {};
+const stocksDBController = {}; 
 
 // need controller to get info from DB when user wants to add a stock to their 'portfolio'
 

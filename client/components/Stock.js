@@ -17,7 +17,7 @@ export default class Stock extends Component {
   }
 
   fetchStock() {
-    let API_KEY = 'FCD8F39RBU0F0BIH'; // not able to use process.env here with the api key. need to find this out 
+    let API_KEY = process.env.API_KEY; // not able to use process.env here with the api key. need to find this out 
     let stockSymbol = 'TSLA'; // need to update later to show the stocks that I choose
     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${stockSymbol}&outputsize=compact&apikey=${API_KEY}`; // using this link: for doc https://www.alphavantage.co/documentation/#dailyadj. // symbol is adjustable 
     let stockChartXValuesFunction = [];

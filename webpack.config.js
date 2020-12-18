@@ -1,5 +1,8 @@
 const path = require('path');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
 
 module.exports = {
   // our react entry file that inside a source file
@@ -44,5 +47,10 @@ module.exports = {
   }, 
   devServer: { // allows you to create a bundled file in memory(in ram) and this is served to express which allows us to see development locally 
     publicPath: '/build/',
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.config().parsed)
+    })
+  ]
 }
